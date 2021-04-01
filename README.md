@@ -29,6 +29,18 @@ Create a garage sale app that meets the main user stories below.
 1. I can submit the checkout form, complete my purchase, and see a confirmation alert with the total cost.
 1. If I do not complete the checkout form with valid data, I will see an alert that tells me my data is not valid.
 
+## Academic Integrity
+
+- Do this assessment **on your own**.
+  - Do not pair program with other fellows.
+  - Do not refer to work from other fellows.
+  - Do not ask individuals outside the program for help.
+- You can refer to any notes that you have.
+- You can Google anything you want, but do not copy any code that you do not understand.
+- Your instructors are here to help you with technical difficulties.
+  - Make sure that the tests are running on your computer. If not, tell an instructor ASAP.
+  - Make sure that you can fork and clone the repo and run the app. If not, tell an instructor ASAP.
+
 ## Acceptance criteria and tests
 
 The acceptance criteria below are covered by unit tests.
@@ -56,7 +68,7 @@ The acceptance criteria below are covered by unit tests.
 - When I click on additional products, the other items in the cart do not change.
 - When I click on additional products, the subtotal, tax, and total update accordingly.
 
-### **checkout.test.js**: `I can submit the checkout form...`
+### **`checkout.test.js`**: `I can submit the checkout form...`
 
 - I can complete the inputs in the checkout form.
 - When I complete the form with valid input and click `Buy Now`, an alert tells me the purchase was successful.
@@ -76,3 +88,4 @@ The acceptance criteria below are covered by unit tests.
   - Draw out your component structure. Check your drawing against the user stories. Will you be able to implement all of the stories with this structure?
 - The products for the store are in the array in `data/productData.js`. You can import this and pass it to your components.
 - There is a `formatPrice()` function you can import from `helpers/formatPrice` that will format prices in dollars and cents.
+- You will need to check that a credit card number is 16 digits long. You can use any 16 digit string for this. In industry, the standard test credit card number is `4111111111111111`.
