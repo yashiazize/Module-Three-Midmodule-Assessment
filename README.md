@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+[![Pursuit Logo](https://avatars1.githubusercontent.com/u/5825944?s=200&v=4)](https://pursuit.org)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Module Three Mid Module Assessment: Garage Sale App
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+- Fork this repo
+- Clone the forked repository
+- `cd` to the directory where you cloned it
+- `npm install` to install dependencies
+- `npm test` to open the cypress testing window
 
-### `npm start`
+> _Note_: Remember to `git add`, `git commit` and `git push` regularly
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Submission Guidelines
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- When finished, commit and push your work.
+- Make a pull request on github.
+- Submit the link to your pull request on Canvas.
 
-### `npm test`
+## Assessment Details
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Create a garage sale app that meets the main user stories below.
+![demo gif](./garage-sale-gif-demo.gif)
 
-### `npm run build`
+1. I can see sections with products, shopping cart, and checkout form.
+1. I can see each product's name, price, photo, description, and an `Add To Cart` button.
+1. I can add products to my cart and see the subtotal, tax, and total update.
+1. I can submit the checkout form, complete my purchase, and see a confirmation alert with the total cost.
+1. If I do not complete the checkout form with valid data, I will see an alert that tells me my data is not valid.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Acceptance criteria and tests
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The acceptance criteria below are covered by unit tests.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### **`layout.test.js`**: `I can see sections with...`
 
-### `npm run eject`
+- I can see a section with products laid out in a grid.
+- I can see a `Cart` section that has `Subtotal`, `Tax`, and `Total`
+- I can see a `Checkout` section that has inputs for `First Name`, `Last Name`, `Email`, `Credit Card`, `Zip Code`, and a button that says `Buy Now`
+- The Cart and Checkout sections appear to the right of the products grid.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### **`product.test.js`**: `I can see each product's name...`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Each product displays the name, photo, and description.
+- Each product displays a price formatted in dollars and cents.
+- Each product has an `Add To Cart` button.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### **`addToCart.test.js`**: `I can add products to my cart...`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- When I click on a product, its name appears in the cart.
+- When I click on a product, its formatted price appears in the cart.
+- When I click on a product, the subtotal updates with the sum of the prices of the items in the cart.
+- When I click on a product, the tax updates to be 5% of the subtotal and is formatted in dollars and cents.
+- When I click on a product, the total updates to be the sum of the subtotal and tax, and is formatted in dollars and cents.
+- When I click on additional products, the other items in the cart do not change.
+- When I click on additional products, the subtotal, tax, and total update accordingly.
 
-## Learn More
+### **checkout.test.js**: `I can submit the checkout form...`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- I can complete the inputs in the checkout form.
+- When I complete the form with valid input and click `Buy Now`, an alert tells me the purchase was successful.
+- When I complete the form with valid input and click `Buy Now`, an alert tells me the total amount I will be charged.
+- When I complete the form but a piece of data is missing, an alert tells me that my input is not valid.
+- When I complete the form but the credit card is not 16 digits long, an alert tells me `Credit card number is not valid.`
+- When I complete the form but the zip code is not 5 digits long, an alert tells me `Zip code is not valid.`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Help and tips
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Before you write any code, think about your component structure.
+  - What components will you need to represent the parts of the app?
+  - Which components will need to have state?
+  - Which components will need to know about the state of **other components**?
+  - Which components will need to get props (data or callbacks) from another component?
+  - Which components will be rendered by other components?
+  - Draw out your component structure. Check your drawing against the user stories. Will you be able to implement all of the stories with this structure?
+- The products for the store are in the array in `data/productData.js`. You can import this and pass it to your components.
+- There is a `formatPrice()` function you can import from `helpers/formatPrice` that will format prices in dollars and cents.
