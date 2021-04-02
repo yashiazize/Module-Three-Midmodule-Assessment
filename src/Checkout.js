@@ -64,25 +64,42 @@ export default class Checkout extends React.Component {
           <label htmlFor="firstName">First Name</label>
           <input
             type="text"
+            id="firstName"
             name="firstName"
             onChange={this.handleTextChange}
           />
 
           <label htmlFor="lastName">Last Name</label>
-          <input type="text" name="lastName" onChange={this.handleTextChange} />
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            onChange={this.handleTextChange}
+          />
 
           <label htmlFor="email">Email</label>
-          <input type="email" name="email" onChange={this.handleTextChange} />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            onChange={this.handleTextChange}
+          />
 
           <label htmlFor="creditCard">Credit Card</label>
           <input
             type="text"
+            id="creditCard"
             name="creditCard"
             onChange={this.handleTextChange}
           />
 
           <label htmlFor="zipCode">Zip Code</label>
-          <input type="text" name="zipCode" onChange={this.handleTextChange} />
+          <input
+            type="text"
+            id="zipCode"
+            name="zipCode"
+            onChange={this.handleTextChange}
+          />
 
           <button type="submit">Buy Now</button>
         </form>

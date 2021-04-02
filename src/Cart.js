@@ -27,9 +27,9 @@ const Cart = ({ items }) => {
           );
         })}
       </ul>
-      <h2> Subtotal: {formatPrice(subtotal)}</h2>
-      <h2> Tax: {formatPrice(tax)}</h2>
-      <h2> Total: {formatPrice(total)}</h2>
+      <h2>Subtotal: {formatPrice(subtotal)}</h2>
+      <h2>Tax: {formatPrice(tax)}</h2>
+      <h2>Total: {formatPrice(total)}</h2>
       <Checkout total={total} />
     </section>
   );
