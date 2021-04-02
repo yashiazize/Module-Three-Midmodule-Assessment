@@ -65,6 +65,7 @@ The acceptance criteria below are covered by unit tests.
 
 - When I click on a product, its name appears in the cart.
 - When I click on a product, its formatted price appears in the cart.
+  - Use `<ul>` and `<li>` elements to list the items in the cart
 - When I click on a product, the subtotal updates with the sum of the prices of the items in the cart.
   - Text should be: `Subtotal: $00.00`
 - When I click on a product, the tax updates to be 5% of the subtotal and is formatted in dollars and cents.
