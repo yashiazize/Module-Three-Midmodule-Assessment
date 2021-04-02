@@ -22,7 +22,7 @@
 
 Create a garage sale app that meets the user stories below.
 
-**The products for the store are in the array in data/productData.js. You can import this and pass it to your components.**
+**The products for the store are in the array in `data/productData.js`. Import this and pass it to your components. Use these products and do not change any information in the array, or else the tests will fail.**
 
 ![demo gif](./garage-sale-gif-demo.gif)
 
