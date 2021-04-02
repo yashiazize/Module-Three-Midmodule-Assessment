@@ -1,5 +1,4 @@
 import productData from "../../src/data/productData";
-import formatPrice from "../../src/helpers/formatPrice";
 
 describe("layout", () => {
   beforeEach(() => {
