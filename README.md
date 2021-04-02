@@ -21,6 +21,9 @@
 ## Assessment Details
 
 Create a garage sale app that meets the user stories below.
+
+**The products for the store are in the array in data/productData.js. You can import this and pass it to your components.**
+
 ![demo gif](./garage-sale-gif-demo.gif)
 
 ## User Stories
