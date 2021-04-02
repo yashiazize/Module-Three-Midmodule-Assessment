@@ -99,4 +99,4 @@ The acceptance criteria below are covered by unit tests.
 - The products for the store are in the array in `data/productData.js`. You can import this and pass it to your components.
 - There is a `formatPrice()` function you can import from `helpers/formatPrice` that will format prices in dollars and cents.
 - You will need to check that a credit card number is 16 digits long. You can use any 16 digit string for this. In industry, the standard test credit card number is `4111111111111111`.
-- If your tests are failing, read the acceptance criteria closely. Some tests expect you to use specific text.
+- If your tests are failing, read the acceptance criteria closely. Some tests expect you to use specific text, classes, or HTML elements.
