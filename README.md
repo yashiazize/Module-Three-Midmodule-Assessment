@@ -34,28 +34,17 @@ Create a garage sale app that meets the user stories below.
 1. I can submit the checkout form, complete my purchase, and see a confirmation alert with the total cost.
 1. If I do not complete the checkout form with valid data, I will see an alert that tells me my data is not valid.
 
-## Academic Integrity
-
-- Do this assessment **on your own**.
-  - Do not pair program with other fellows.
-  - Do not refer to work from other fellows.
-  - Do not ask individuals outside the program for help.
-- You can refer to any notes that you have.
-- You can Google anything you want, but do not copy any code that you do not understand.
-- Your instructors are here to help you with technical difficulties.
-  - Make sure that the tests are running on your computer. If not, tell an instructor ASAP.
-  - Make sure that you can fork and clone the repo and run the app. If not, tell an instructor ASAP.
-
 ## Acceptance criteria and tests
 
-The acceptance criteria below are covered by unit tests.
+The acceptance criteria below are covered by unit tests. Notice that there are some important details about the exact text, classes, or HTML tags you'll need to use in order to pass the tests.
 
 ### **`layout.test.js`**: `I can see sections with...`
 
 - I can see a section with products laid out in a grid.
-  - Use the class name `Products` with css grid
+  - Use the class name `Products` with css grid and `grid-template-columns`
 - I can see a `Cart` section that has `Subtotal`, `Tax`, and `Total`
-- I can see a `Checkout` section that has inputs for `First Name`, `Last Name`, `Email`, `Credit Card`, `Zip Code`, and a button that says `Buy Now`
+- I can see a `Checkout` section that has inputs _and labels_ for `First Name`, `Last Name`, `Email`, `Credit Card`, `Zip Code`, and a button that says `Buy Now`
+  - Don't forget to create `<label>` elements for your inputs
 
 ### **`product.test.js`**: `I can see each product's name...`
 
@@ -63,18 +52,19 @@ The acceptance criteria below are covered by unit tests.
 - Each product displays a price formatted in dollars and cents.
   - Text should be: `Price: $00.00`
 - Each product has an `Add To Cart` button.
+  - The button text should be: `Add To Cart`
 
 ### **`addToCart.test.js`**: `I can add products to my cart...`
 
 - When I click on a product, its name appears in the cart.
 - When I click on a product, its formatted price appears in the cart.
-  - Use `<ul>` and `<li>` elements to list the items in the cart
+  - Use `<ul>` and `<li>` elements to list the items and prices in the cart (product and price on one `<li>`)
 - When I click on a product, the subtotal updates with the sum of the prices of the items in the cart.
-  - Text should be: `Subtotal: $00.00`
+  - Text should be: `Subtotal: $00.00` (with the correct price)
 - When I click on a product, the tax updates to be 5% of the subtotal and is formatted in dollars and cents.
-  - Text should be: `Tax: $00.00`
+  - Text should be: `Tax: $00.00` (with the correct price)
 - When I click on a product, the total updates to be the sum of the subtotal and tax, and is formatted in dollars and cents.
-  - Text should be: `Total: $00.00`
+  - Text should be: `Total: $00.00` (with the correct price)
 - When I click on additional products, they are added to the cart.
 - When I click on additional products, the other items in the cart do not change.
 - When I click on additional products, the subtotal, tax, and total update as expected.
@@ -103,3 +93,15 @@ The acceptance criteria below are covered by unit tests.
 - There is a `formatPrice()` function you can import from `helpers/formatPrice` that will format prices in dollars and cents.
 - You will need to check that a credit card number is 16 digits long. You can use any 16 digit string for this. In industry, the standard test credit card number is `4111111111111111`.
 - If your tests are failing, read the acceptance criteria closely. Some tests expect you to use specific text, classes, or HTML elements.
+
+## Academic Integrity
+
+- Do this assessment **on your own**.
+  - Do not pair program with other fellows.
+  - Do not refer to work from other fellows.
+  - Do not ask individuals outside the program for help.
+- You can refer to any notes that you have.
+- You can Google anything you want, but do not copy any code that you do not understand.
+- Your instructors are here to help you with technical difficulties.
+  - Make sure that the tests are running on your computer. If not, tell an instructor ASAP.
+  - Make sure that you can fork and clone the repo and run the app. If not, tell an instructor ASAP.
