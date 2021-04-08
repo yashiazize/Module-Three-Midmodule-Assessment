@@ -8,7 +8,7 @@
 - Clone the forked repository
 - `cd` to the directory where you cloned it
 - `npm install` to install dependencies
-- `npm test` to open the cypress testing window
+- `npm run cypress` to open the cypress testing window
 
 > _Note_: Remember to `git add`, `git commit` and `git push` regularly
 
