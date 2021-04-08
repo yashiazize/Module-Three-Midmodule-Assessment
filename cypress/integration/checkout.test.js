@@ -9,12 +9,6 @@ const addItemsToCart = () => {
   });
 };
 
-const expectAlertContains = (text) => {
-  cy.on("window:alert", (str) => {
-    expect(str).to.contain(text);
-  });
-};
-
 const formData = {
   firstName: "Erica",
   lastName: "Example",
@@ -37,7 +31,15 @@ const completeForm = (params = {}) => {
 
 const completeAndBuy = (params = {}) => {
   completeForm(params);
-  cy.findByText("Buy Now").click();
+  return cy.findByText("Buy Now").click();
+};
+
+const expectAlertText = (stub, text) => {
+  const alert = stub.getCall(0);
+  expect(alert).to.exist;
+
+  const alertText = alert.args.join(" ");
+  expect(alertText).to.include(text);
 };
 
 describe("checkout", () => {
@@ -54,37 +56,49 @@ describe("checkout", () => {
   });
 
   describe("When I complete the form with valid input and click Buy Now", () => {
-    it("an alert tells me the purchase was successful", () => {
-      completeAndBuy();
+    let stub;
+    beforeEach(() => {
+      stub = cy.stub();
+      cy.on("window:alert", stub);
+    });
 
-      expectAlertContains("Purchase complete");
+    it("an alert tells me the purchase was successful", () => {
+      completeAndBuy().then(() => {
+        expectAlertText(stub, "Purchase complete");
+      });
     });
 
     it("an alert tells me the total amount I will be charged", () => {
       addItemsToCart();
-      completeAndBuy();
-
-      expectAlertContains("$73.49");
+      completeAndBuy().then(() => {
+        expectAlertText(stub, "$73.49");
+      });
     });
   });
 
   describe("When I complete the form with invalid inputs and click Buy Now", () => {
-    it("an alert tells me input is invalid if data is missing", () => {
-      completeAndBuy({ firstName: "" });
+    let stub;
+    beforeEach(() => {
+      stub = cy.stub();
+      cy.on("window:alert", stub);
+    });
 
-      expectAlertContains("Input is not valid");
+    it("an alert tells me input is invalid if data is missing", () => {
+      completeAndBuy({ firstName: "" }).then(() => {
+        expectAlertText(stub, "Input is not valid");
+      });
     });
 
     it("an alert tells me if the credit card number is invalid", () => {
-      completeAndBuy({ creditCard: "42" });
-
-      expectAlertContains("Credit card number is not valid");
+      completeAndBuy({ creditCard: "42" }).then(() => {
+        expectAlertText(stub, "Credit card number is not valid");
+      });
     });
 
     it("an alert tells me if the zip code is invalid", () => {
-      completeAndBuy({ zipCode: "42" });
-
-      expectAlertContains("Zip code is not valid");
+      completeAndBuy({ zipCode: "42" }).then(() => {
+        expectAlertText(stub, "Zip code is not valid");
+      });
     });
   });
 });
