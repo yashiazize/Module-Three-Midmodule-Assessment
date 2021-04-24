@@ -7,7 +7,7 @@ import Checkout from "./Components/Checkout";
 import formatPrice from "./helpers/formatPrice"
 
 class App extends React.Component {
-  state = { cartList: [], products: productData};
+  state = { cartList: []};
 
   addProduct = (item) => {
     this.setState((prevState) => {
