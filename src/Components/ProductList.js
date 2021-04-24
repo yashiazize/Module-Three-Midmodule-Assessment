@@ -8,9 +8,9 @@ const ProductList = ({ products, addProduct }) => {
         return <ProductListItem key={item.id} item={item} addProduct={addProduct}/>
     }) 
   return (
-    <section className="Products">
+    <section>
       <h1>My Garage Sale</h1>
-      <ul>{items}</ul>
+      <ul className="Products">{items}</ul>
     </section>
   );
 };

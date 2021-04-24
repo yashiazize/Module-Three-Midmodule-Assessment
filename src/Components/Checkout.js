@@ -9,8 +9,8 @@ class Checkout extends React.Component {
     }
 
     handleSubmit = (e) => {
-        const {total} = this.props
         e.preventDefault()
+        const {total} = this.props
         const {firstName, lastName, email, creditCard, zipCode} = this.state
         if (!firstName || !lastName || !email || !creditCard || !zipCode) {
             window.alert("Input is not valid")
@@ -27,7 +27,7 @@ class Checkout extends React.Component {
   render() {
     const {firstName, lastName, email, creditCard, zipCode} = this.state
     return (
-      <section>
+      <section className="Checkout">
         <h2>Checkout</h2>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="firstName">First Name</label>

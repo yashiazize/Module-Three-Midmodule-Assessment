@@ -15,10 +15,10 @@ const Cart = ({ cartList, subtotal, total, tax }) => {
           );
         })}
       </ul>
-      <h3>Subtotal: ${subtotal}</h3>
+      <h3>Subtotal: {subtotal}</h3>
       <h3>
-          Tax: ${tax}</h3>
-      <h3>Total: ${total}</h3>
+          Tax: {tax}</h3>
+      <h3>Total: {total}</h3>
     </section>
   );
 };
