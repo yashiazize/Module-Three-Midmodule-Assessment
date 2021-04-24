@@ -1,4 +1,5 @@
 import React from "react";
+import "./Checkout.css"
 
 class Checkout extends React.Component {
     state = {firstName:"", lastName:"", email:"", creditCard:"", zipCode: ""  }

@@ -1,0 +1,17 @@
+.Checkout {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+   
+}
+
+.Checkout input {
+    display: inline-block;
+}
+
+.Checkout label {
+    display: inline-flexbox;
+    clear: left;
+    width: 250px;
+    text-align: right;
+}

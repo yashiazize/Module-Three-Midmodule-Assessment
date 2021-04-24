@@ -1,5 +1,7 @@
 .main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-   
+    grid-template-columns: 100vh 100vh;
+    flex-direction: column;
+    gap: 50mm;
 }
+

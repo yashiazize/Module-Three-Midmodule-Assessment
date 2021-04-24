@@ -1,6 +1,7 @@
 .Products {
     display: grid; 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 2fr;
+    grid-gap: 20mm;
 }
 
 
@@ -11,4 +12,8 @@
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
+}
+
+.Products button {
+    margin: 2mm;
 }

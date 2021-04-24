@@ -1,4 +1,5 @@
 import React from "react";
+import formatPrice from "../helpers/formatPrice";
 
 const Cart = ({ cartList, subtotal, total, tax }) => {
     
@@ -10,12 +11,12 @@ const Cart = ({ cartList, subtotal, total, tax }) => {
           const { name, price, id } = item;
           return (
             <li key={id}>
-                {name}: ${price.toFixed(2)}
+                {name}: {formatPrice(price)}
             </li>
           );
         })}
       </ul>
-      <h3>Subtotal: {subtotal}</h3>
+      <h3>Subtotal: {formatPrice(subtotal)}</h3>
       <h3>
           Tax: {tax}</h3>
       <h3>Total: {total}</h3>
